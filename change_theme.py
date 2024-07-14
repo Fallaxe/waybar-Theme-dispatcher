@@ -4,15 +4,15 @@ import json
 
 def getCurrentTheme():
     with open('currentTheme.json','r') as current:
-    # current.cloyse()
         return json.load(current)
 
 def setCurrentTheme(theme,id):
     with open('currentTheme.json','w') as saveFile:
         print(theme["name"])
         json.dump({"name":theme["name"],"id":id},saveFile,indent=4)
+        saveFile.flush()
         setThemeToWaybar(theme["config"],theme["style"])
-
+        
 def loadThemesEntries():
    with open('themesEntries.json','r') as entries:
     return json.load(entries)
@@ -37,6 +37,7 @@ def main():
         nextTheme()
     except Exception as e:
         print(f"Errore: {e}")
+    exit()
     return 0
 
 if __name__ == '__main__':
