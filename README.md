@@ -27,4 +27,12 @@ Write in themeEntries.json a list of themes:
 
 ]
 ```
-In currentTheme:
+In currentTheme you need to specify:
+``` markdown
+{
+    "id": 0,
+    "name": "nametheme1",
+    "config": "./themes/nametheme1/config",
+    "style": "./themes/nametheme1/style.css"
+}
+```
